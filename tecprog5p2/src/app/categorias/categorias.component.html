@@ -1,0 +1,25 @@
+<div>
+    <h1>Minha Biblioteca de Musicas</h1>
+    <h2>Categorias</h2>
+    
+    <table id="todos">
+        <thead>
+            <tr>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categorias of listacategorias">
+                <td> <a routerLink="musicas">{{ categorias.name }}</a></td>
+                <th>{{ listacategorias.length }}</th>
+            </tr>
+        </tbody>
+    </table>
+    <form>
+        <h3>Nova categoria</h3>
+        <label for="nome">Nome :</label>
+        <input type="text" id="nome" [(ngModel)]="novaCategoria.name" [ngModelOptions]="{standalone: true}">
+        <button (click)="saveData()">SALVAR</button>
+    </form>
+    
+</div>
